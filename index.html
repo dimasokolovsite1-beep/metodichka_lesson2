@@ -1,0 +1,1108 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Матеріали для сайту</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f5f7; --card:#fff; --ink:#1d1d1f; --soft:#6e6e73; --line:#e8e8ed;
+  --hover:#f2f6fd; --accent:#0177ed; --accent-ink:#fff; --thumb:#f5f5f7; --code:#fafafa;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0f0f11; --card:#1a1a1d; --ink:#f5f5f7; --soft:#9a9aa1; --line:#2a2a2f;
+    --hover:#1f2733; --accent:#3d95f5; --thumb:#232327; --code:#141416;
+    color-scheme:dark;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px}
+
+.top{padding:56px 0 20px}
+.top h1{margin:0;font-size:clamp(28px,5vw,40px);font-weight:700;letter-spacing:-.035em;line-height:1.1}
+.top p{margin:8px 0 0;color:var(--soft)}
+.tilda{display:inline-flex;align-items:center;gap:18px;margin-top:20px;padding:12px 14px 12px 18px;border-radius:16px;background:var(--card);border:1px solid var(--line);color:var(--ink);text-decoration:none;transition:border-color .15s,background .15s}
+.tilda span{display:grid;line-height:1.25}
+.tilda small{font-size:12.5px;color:var(--soft)}
+.tilda b{font-size:16px;font-weight:600}
+.tilda svg{width:34px;height:34px;padding:8px;border-radius:10px;background:var(--accent);fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.tilda:hover{border-color:var(--accent);background:var(--hover)}
+.tilda:hover svg{transform:translate(2px,-2px)}
+
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px)}
+nav .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+nav .wrap::-webkit-scrollbar{display:none}
+nav a{flex:none;padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:500;color:var(--soft);text-decoration:none;background:var(--card);border:1px solid var(--line);transition:color .15s,border-color .15s}
+nav a:hover,nav a.on{color:var(--accent);border-color:var(--accent)}
+
+main{padding:12px 0 40px;display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.card{background:var(--card);border-radius:20px;padding:22px;border:1px solid var(--line)}
+.ch{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.num{font-size:13px;font-weight:600;color:var(--soft);min-width:22px}
+.codes{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-weight:700;font-size:20px;letter-spacing:-.02em;padding:2px 10px;margin-left:-10px;border-radius:10px;transition:background .15s,color .15s}
+.chip+.chip{margin-left:0}
+.chip:hover{background:var(--hover);color:var(--accent)}
+.note{margin:-6px 0 14px;color:var(--soft);font-size:14px}
+h2.sec{font-size:13px;font-weight:600;color:var(--soft);margin:0 0 12px;text-transform:uppercase;letter-spacing:.06em}
+
+.row{display:flex;align-items:center;gap:12px;width:100%;padding:10px 12px;border-radius:12px;transition:background .15s}
+.row:hover{background:var(--hover)}
+.lab{flex:none;width:92px;font-size:13px;color:var(--soft)}
+.val{flex:1;min-width:0;font-weight:500;overflow-wrap:anywhere}
+.row--url .val{font:400 12.5px/1.45 "JetBrains Mono",ui-monospace,Menlo,monospace;color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ic{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:8px;color:var(--soft);opacity:.55;transition:opacity .15s,color .15s}
+.ic svg,.btn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.row:hover .ic,.sw:hover .ic{opacity:1;color:var(--accent)}
+.done .ic{opacity:1;color:#1fa463}
+
+.list{display:grid;grid-template-columns:minmax(0,1fr);margin:0 -12px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:10px}
+.sub{border:1px solid var(--line);border-radius:16px;padding:12px 12px 6px;display:grid;grid-template-columns:minmax(0,1fr);align-content:start}
+.subt{font-size:12px;font-weight:600;color:var(--soft);text-transform:uppercase;letter-spacing:.06em;padding:2px 12px 6px}
+.sub .row{padding:8px 12px}
+.sub .lab{width:78px}
+.thumb{background:var(--thumb);border-radius:12px;height:132px;display:grid;place-items:center;margin:6px 0 2px;overflow:hidden}
+.thumb img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.thumb.dark{background:#1d1d1f;height:84px}
+.thumb.dark img{max-height:40px}
+.logo .thumb{margin:0 12px 6px}
+
+.colors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.sw{display:flex;align-items:center;gap:14px;padding:12px;border:1px solid var(--line);border-radius:16px;transition:background .15s}
+.sw:hover{background:var(--hover)}
+.dot{width:44px;height:44px;border-radius:12px;flex:none}
+.swt{flex:1;display:grid}
+.swt b{font:500 15px "JetBrains Mono",ui-monospace,monospace}
+.swt small{color:var(--soft);font-size:13px}
+
+.code{border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.cbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 12px 12px 16px;flex-wrap:wrap}
+.meta{color:var(--soft);font-size:13.5px}
+.cbtns{display:flex;gap:8px}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 16px;border-radius:999px;font-weight:600;font-size:14px;transition:background .15s,transform .1s}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.primary.done{background:#1fa463}
+.btn.ghost{color:var(--soft)}
+.btn.ghost:hover{background:var(--hover);color:var(--ink)}
+.src{display:block;width:100%;height:380px;margin:0;padding:14px 16px;border:0;border-top:1px solid var(--line);background:var(--code);color:var(--ink);font:12.5px/1.6 "JetBrains Mono",ui-monospace,Menlo,monospace;resize:vertical;outline:none;tab-size:2}
+.src[hidden]{display:none}
+
+.foot{text-align:center;padding:24px 0 64px}
+.foot a{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;background:var(--accent);color:#fff;font-weight:600;text-decoration:none;transition:filter .15s}
+.foot a:hover{filter:brightness(1.08)}
+.foot svg{width:18px;height:18px;fill:currentColor}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,16px);opacity:0;pointer-events:none;background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-size:14px;font-weight:500;transition:opacity .2s,transform .2s;z-index:10}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:640px){
+  .top{padding-top:36px}
+  .card{padding:16px;border-radius:18px}
+  .grid,.colors{grid-template-columns:minmax(0,1fr)}
+  .lab,.sub .lab{width:70px}
+  .cbar{padding:12px}
+  .cbtns{width:100%}
+  .cbtns .btn{flex:1;justify-content:center}
+}
+</style>
+</head>
+<body>
+<header class="top wrap">
+  <h1>Матеріали для сайту</h1>
+  <p>Натисніть на будь-який рядок — він скопіюється.</p>
+  <a class="tilda" href="https://tilda.cc/" target="_blank" rel="noopener"><span><small>Конструктор</small><b>tilda.cc</b></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+</header>
+<nav><div class="wrap"><a href="#colors">Кольори</a><a href="#b1">Блок 1</a><a href="#b2">Блок 2</a><a href="#b3">Блок 3</a><a href="#b4">Блок 4</a><a href="#b5">Блок 5</a><a href="#b6">Блок 6</a><a href="#b7">Блок 7</a><a href="#menu">Меню</a></div></nav>
+<main class="wrap">
+  <section class="card" id="colors"><h2 class="sec">Кольори</h2><div class="colors"><button class="sw" data-copy="#0177ed"><span class="dot" style="background:#0177ed"></span><span class="swt"><b>#0177ed</b><small>синій</small></span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><button class="sw" data-copy="#333333"><span class="dot" style="background:#333333"></span><span class="swt"><b>#333333</b><small>чорний</small></span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button></div></section>
+  <section class="card" id="b1"><header class="ch"><span class="num">1</span><div class="codes"><button class="chip" data-copy="T123" title="Скопіювати код блоку">T123</button></div></header><p class="note">Вставити код цілком у блок T123 (HTML-код).</p><div class="code"><div class="cbar"><span class="meta">HTML-код · 463 рядків · 16 КБ</span><div class="cbtns"><button class="btn ghost" data-toggle="src1">Показати</button><button class="btn primary" data-copy-from="src1"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg>Копіювати код</button></div></div><textarea id="src1" class="src" wrap="off" readonly spellcheck="false" hidden>&lt;!-- Tilda: блок T123 (HTML-код). Вставить целиком. Видео и фото грузятся с apple.com. --&gt;
+&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap&amp;subset=cyrillic" rel="stylesheet"&gt;
+
+&lt;style&gt;
+  .ih-hero {
+    --ih-bg: #ffffff;
+    --ih-ink: #333333;
+    --ih-ink-soft: #5c5c5c;
+    --ih-blue: #3375e5;
+    --ih-blue-dark: #2563d4;
+    --ih-ease-out: cubic-bezier(.22, 1, .36, 1);
+    --ih-ease-inout: cubic-bezier(.65, 0, .35, 1);
+    /* --ih-header: height of a fixed site header over the block (set by JS) */
+    --ih-pad: clamp(40px, 9vh, 120px);
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    min-height: 600px;
+    overflow: hidden;
+    background: var(--ih-bg);
+    color: var(--ih-ink);
+    font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  .ih-hero, .ih-hero *, .ih-hero *::before, .ih-hero *::after { box-sizing: border-box; }
+
+  .ih-hero .ih-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1240px;
+    padding: calc(var(--ih-header, 0px) + var(--ih-pad)) 16px 0;
+    text-align: center;
+  }
+
+  .ih-hero.ih-has-header { --ih-pad: clamp(28px, 5.5vh, 64px); }
+
+  .ih-hero .ih-title {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: clamp(36px, 6.2vw, 96px);
+    font-weight: 700;
+    line-height: 1.04;
+    letter-spacing: -0.045em;
+    color: var(--ih-ink);
+    text-wrap: balance;
+  }
+
+  .ih-hero .ih-title span { display: block; }
+  .ih-hero .ih-title .ih-accent { color: var(--ih-blue); }
+
+  .ih-hero .ih-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px clamp(20px, 2.6vw, 40px);
+    margin: clamp(20px, 3vh, 32px) 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: clamp(16px, 1.25vw, 19px);
+    line-height: 1.3;
+    color: var(--ih-ink-soft);
+    letter-spacing: -0.01em;
+  }
+
+  .ih-hero .ih-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+  }
+
+  .ih-hero .ih-check {
+    flex: none;
+    width: 1.35em;
+    height: 1.35em;
+  }
+
+  .ih-hero .ih-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: clamp(24px, 4vh, 44px);
+    padding: 0 52px;
+    height: 64px;
+    border-radius: 999px;
+    background: var(--ih-blue);
+    color: #fff;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    box-shadow: 0 18px 40px -12px rgba(51, 117, 229, .55);
+    transition: background-color .25s ease, box-shadow .25s ease, transform .25s var(--ih-ease-out);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .ih-hero .ih-cta svg {
+    width: 20px;
+    height: 20px;
+    transition: transform .3s var(--ih-ease-out);
+  }
+
+  .ih-hero .ih-cta:hover {
+    background: var(--ih-blue-dark);
+    color: #fff;
+    box-shadow: 0 22px 46px -12px rgba(51, 117, 229, .65);
+  }
+  .ih-hero .ih-cta:hover svg { transform: translateX(4px); }
+  .ih-hero .ih-cta:active { transform: scale(.97); }
+  .ih-hero .ih-cta:focus-visible { outline: 3px solid rgba(51, 117, 229, .4); outline-offset: 4px; }
+
+  /* ---------- Stage with phone ---------- */
+
+  .ih-hero .ih-stage {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 0;
+    min-height: 0;
+    width: 100%;
+    container-type: size;
+  }
+
+  .ih-hero .ih-media {
+    /* phone + bottom whitespace ≈ 38% of frame width → fit by stage height, keep a gap above */
+    --w: min(68cqw, calc((100cqh - 24px) * 2.6), 1500px);
+    position: absolute;
+    left: 50%;
+    bottom: clamp(0px, 2vh, 24px);
+    width: var(--w);
+    margin-left: calc(var(--w) / -2);
+    aspect-ratio: 2520 / 1224;
+    transform-origin: 50% 58.5%;
+    will-change: transform;
+    /* soft edges so frame borders always melt into the white page */
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%);
+  }
+
+  .ih-hero .ih-frame {
+    position: absolute;
+    inset: 0;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 18%, #000 96%, transparent 100%);
+            mask-image: linear-gradient(180deg, transparent 0, #000 18%, #000 96%, transparent 100%);
+  }
+
+  .ih-hero .ih-media video,
+  .ih-hero .ih-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    display: block;
+    background: var(--ih-bg);
+  }
+
+  /* hide alt text / broken-image icon while the image is loading */
+  .ih-hero .ih-media img { opacity: 0; color: transparent; }
+  .ih-hero .ih-media video { transition: opacity .35s ease; }
+
+  .ih-hero.is-ended .ih-media img { opacity: 1; }
+  .ih-hero.is-ended .ih-media video { opacity: 0; }
+
+  /* ---------- Intro states ---------- */
+
+  .ih-hero.ih-js .ih-media { opacity: 0; }
+  .ih-hero.ih-js.is-playing .ih-media,
+  .ih-hero.ih-js.is-ended .ih-media {
+    opacity: 1;
+    transition: opacity .8s var(--ih-ease-out);
+  }
+
+  .ih-hero.ih-js .ih-reveal {
+    opacity: 0;
+    transform: translateY(-28px);
+  }
+
+  .ih-hero.is-revealed .ih-reveal {
+    opacity: 1;
+    transform: none;
+    transition: opacity .9s var(--ih-ease-out), transform 1s var(--ih-ease-out);
+    transition-delay: calc(var(--i, 0) * 110ms + 350ms);
+  }
+
+  /* ---------- Mobile ---------- */
+
+  @media (max-width: 760px) {
+    .ih-hero { --ih-pad: max(28px, 5svh); }
+    .ih-hero.ih-has-header { --ih-pad: 28px; }
+
+    /* SF Pro on iPhone is wider than fallbacks: keep "Новий iPhone вже тут." on one line */
+    .ih-hero .ih-title {
+      font-size: clamp(28px, 8.2vw, 44px);
+      letter-spacing: -0.04em;
+    }
+
+    .ih-hero .ih-features {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      margin-top: 18px;
+      font-size: 15px;
+    }
+
+    .ih-hero .ih-cta {
+      width: min(100%, 340px);
+      height: 54px;
+      font-size: 17px;
+      margin-top: 22px;
+    }
+
+    /* the frame is very wide; let it overflow so the phone itself is big.
+       Phone block ≈ 37% of frame width; center it in the space left under the button */
+    .ih-hero .ih-media {
+      --w: min(188cqw, calc((100cqh - 32px) * 2.6));
+      bottom: max(8px, calc((100cqh - var(--w) * 0.37) / 2));
+    }
+  }
+
+  @media (max-height: 520px) and (orientation: landscape) {
+    .ih-hero { min-height: 640px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ih-hero.ih-js .ih-reveal, .ih-hero.ih-js .ih-media { opacity: 1; transform: none; transition: none; }
+  }
+&lt;/style&gt;
+
+&lt;!-- Fixed site header is detected automatically. To set it by hand: data-header-offset="80" (px) --&gt;
+&lt;section class="ih-hero" id="ihHero" aria-labelledby="ihTitle"&gt;
+  &lt;script&gt;document.getElementById('ihHero').classList.add('ih-js');&lt;/script&gt;
+
+  &lt;div class="ih-content"&gt;
+    &lt;h1 class="ih-title" id="ihTitle"&gt;
+      &lt;span class="ih-reveal" style="--i:0"&gt;Новий iPhone вже тут.&lt;/span&gt;
+      &lt;span class="ih-reveal ih-accent" style="--i:1"&gt;Без переплат і очікування.&lt;/span&gt;
+    &lt;/h1&gt;
+
+    &lt;ul class="ih-features ih-reveal" style="--i:2"&gt;
+      &lt;li&gt;
+        &lt;svg class="ih-check" viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;circle cx="12" cy="12" r="12" fill="#3375e5"/&gt;&lt;path d="M7.2 12.4l3.1 3 6.5-6.6" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;
+        Офіційна гарантія 12 місяців
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;svg class="ih-check" viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;circle cx="12" cy="12" r="12" fill="#3375e5"/&gt;&lt;path d="M7.2 12.4l3.1 3 6.5-6.6" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;
+        Розстрочка або Trade-In
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;svg class="ih-check" viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;circle cx="12" cy="12" r="12" fill="#3375e5"/&gt;&lt;path d="M7.2 12.4l3.1 3 6.5-6.6" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;
+        Доставка по Україні за 1 день
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;a class="ih-cta ih-reveal" style="--i:3" href="#catalog"&gt;
+      Обрати модель
+      &lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;path d="M4 12h15m-6-6.5L19.5 12 13 18.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;div class="ih-stage"&gt;
+    &lt;div class="ih-media" id="ihMedia"&gt;
+      &lt;div class="ih-frame"&gt;
+        &lt;img src="https://www.apple.com/v/iphone-duo/d/images/overview/highlights/highlights_display_endframe__e0hi6rmf3hg2_large_2x.jpg" alt="Новий iPhone" width="2520" height="1224" decoding="async"&gt;
+        &lt;video id="ihVideo" src="https://www.apple.com/105/media/us/iphone-duo/2026/9305e4b9-72d9-4c05-9381-b572adadd5e5/anim/highlights-display/large_2x.mp4" muted playsinline preload="auto" disablepictureinpicture aria-hidden="true"&gt;&lt;/video&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;script&gt;
+  (function () {
+    var hero = document.getElementById('ihHero');
+    var media = document.getElementById('ihMedia');
+    var video = document.getElementById('ihVideo');
+    if (!hero || !media || !video) return;
+
+    // Phone area inside the video frame (fractions of frame width / height)
+    var PHONE_W = 0.47;      // phone width relative to frame width
+    var PHONE_H = 0.335;     // phone height relative to frame width
+    var PHONE_CY = 0.585;    // vertical center of phone in frame (matches transform-origin)
+
+    var phase = 'intro';     // intro -&gt; moving -&gt; done
+    var headerOffset = 0;
+
+    // Height of a fixed/sticky site header (e.g. Tilda menu) that covers the top of the block
+    function detectHeader() {
+      var manual = hero.getAttribute('data-header-offset');
+      if (manual !== null &amp;&amp; manual !== '') return Math.max(0, parseFloat(manual) || 0);
+      if (!document.elementsFromPoint) return 0;
+
+      var vw = window.innerWidth, vh = window.innerHeight;
+      var heroTop = hero.getBoundingClientRect().top + window.pageYOffset;
+      var bottom = 0;
+      var xs = [12, vw / 2, vw - 12];
+
+      for (var i = 0; i &lt; xs.length; i++) {
+        var stack = document.elementsFromPoint(xs[i], 2);
+        for (var j = 0; j &lt; stack.length; j++) {
+          var el = stack[j];
+          if (hero.contains(el)) continue;
+          // climb to the fixed/sticky container of this element
+          for (var n = el; n &amp;&amp; n !== document.body &amp;&amp; n !== document.documentElement; n = n.parentElement) {
+            var cs = getComputedStyle(n);
+            if (cs.position !== 'fixed' &amp;&amp; cs.position !== 'sticky') continue;
+            var r = n.getBoundingClientRect();
+            if (cs.visibility !== 'hidden' &amp;&amp; parseFloat(cs.opacity) &gt; 0.05 &amp;&amp;
+                r.top &lt;= 2 &amp;&amp; r.height &gt; 0 &amp;&amp; r.height &lt; vh * 0.4 &amp;&amp; r.width &gt; vw * 0.6) {
+              bottom = Math.max(bottom, r.bottom);
+            }
+            break;
+          }
+        }
+      }
+      // only the part that actually overlaps the block at the top of the page
+      return Math.max(0, Math.round(bottom - heroTop));
+    }
+
+    function applyHeader() {
+      var h = detectHeader();
+      if (h === headerOffset) return;
+      headerOffset = h;
+      hero.style.setProperty('--ih-header', h + 'px');
+      hero.classList.toggle('ih-has-header', h &gt; 0);
+    }
+
+    // Transform that puts the phone big &amp; centered on screen, relative to its final place
+    function introTransform() {
+      var prev = media.style.transform;
+      media.style.transform = 'none';
+      var r = media.getBoundingClientRect();
+      var h = hero.getBoundingClientRect();
+      media.style.transform = prev;
+
+      var vw = window.innerWidth;
+      var top = h.top + headerOffset;
+      var vh = Math.min(window.innerHeight, h.bottom) - top;
+      var targetW = Math.min(vh * 0.78 / PHONE_H, vw * 0.92 / PHONE_W);
+      var s = targetW / r.width;
+
+      // center in the visible part of the hero, below a fixed header
+      var ox = r.left + r.width * 0.5;
+      var oy = r.top + r.height * PHONE_CY;
+      var tx = vw / 2 - ox;
+      var ty = top + vh / 2 - oy;
+
+      return 'translate3d(' + tx.toFixed(1) + 'px,' + ty.toFixed(1) + 'px,0) scale(' + s.toFixed(4) + ')';
+    }
+
+    function placeIntro() {
+      media.style.transition = 'none';
+      media.style.transform = introTransform();
+    }
+
+    function finish() {
+      if (phase !== 'intro') return;
+      phase = 'moving';
+      clearTimeout(startTimer);
+      hero.classList.add('is-ended');
+
+      // let the last frame settle, then glide the phone down and bring in the text
+      setTimeout(function () {
+        media.style.transition = 'transform 1.4s var(--ih-ease-inout), opacity .8s var(--ih-ease-out)';
+        media.style.transform = 'none';
+        hero.classList.add('is-revealed');
+        setTimeout(function () {
+          phase = 'done';
+          media.style.transition = '';
+          media.style.transform = '';
+        }, 1500);
+      }, 250);
+    }
+
+    applyHeader();
+
+    // Re-detect the header only at the top of the page or when the width changes (rotation).
+    // On phones a height-only resize fires every time the browser bars show/hide while scrolling;
+    // a menu that hides on scroll would then change the offset and make the page jump.
+    var lastWidth = window.innerWidth;
+    var resizeTimer;
+    function onLayoutChange(force) {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        var widthChanged = window.innerWidth !== lastWidth;
+        lastWidth = window.innerWidth;
+        if (widthChanged || (force === true &amp;&amp; window.pageYOffset &lt; 10)) applyHeader();
+        if (phase === 'intro') placeIntro();
+      }, 80);
+    }
+    window.addEventListener('resize', onLayoutChange);
+    // the site menu may render or change size after this script
+    window.addEventListener('load', function () { onLayoutChange(true); });
+    setTimeout(function () { onLayoutChange(true); }, 600);
+
+    // Reduced motion: show the final screen right away
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      hero.classList.add('is-ended', 'is-revealed');
+      phase = 'done';
+      return;
+    }
+
+    placeIntro();
+
+    video.addEventListener('playing', function () {
+      clearTimeout(startTimer);
+      hero.classList.add('is-playing');
+    }, { once: true });
+
+    video.addEventListener('ended', finish);
+
+    // If the video can't start (autoplay blocked, low-power mode, slow network) — show the final frame
+    var startTimer;
+    function armTimer(ms) {
+      clearTimeout(startTimer);
+      startTimer = setTimeout(finish, ms);
+    }
+
+    function tryPlay() {
+      var p = video.play();
+      if (p &amp;&amp; typeof p.catch === 'function') {
+        p.catch(function (err) {
+          // source problems are handled by the 'error' listener
+          if (err &amp;&amp; err.name === 'NotAllowedError') finish();
+        });
+      }
+    }
+
+    var fallbackSrc = video.getAttribute('data-fallback');
+    function onVideoError() {
+      if (fallbackSrc &amp;&amp; video.currentSrc !== fallbackSrc) {
+        video.src = fallbackSrc;
+        armTimer(6000);
+        tryPlay();
+      } else {
+        finish();
+      }
+    }
+    video.addEventListener('error', onVideoError);
+
+    armTimer(4000);
+    if (video.error) onVideoError();
+    else tryPlay();
+  })();
+&lt;/script&gt;
+</textarea></div></section><section class="card" id="b2"><header class="ch"><span class="num">2</span><div class="codes"><button class="chip" data-copy="DV13" title="Скопіювати код блоку">DV13</button></div></header><div class="list"><button class="row" data-copy="Чохол в подарунок"><span class="lab">Текст 1</span><span class="val">Чохол в подарунок</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><button class="row" data-copy="Рік гарантії"><span class="lab">Текст 2</span><span class="val">Рік гарантії</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><button class="row" data-copy="Оригінальна техніка"><span class="lab">Текст 3</span><span class="val">Оригінальна техніка</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button></div></section><section class="card" id="b3"><header class="ch"><span class="num">3</span><div class="codes"><button class="chip" data-copy="TE900B" title="Скопіювати код блоку">TE900B</button></div></header><div class="list"><button class="row" data-copy="Новинки і пропозиції"><span class="lab">Заголовок</span><span class="val">Новинки і пропозиції</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button></div><div class="grid"><div class="sub"><div class="subt">Картка 1</div><button class="row" data-copy="iPhone Duo"><span class="lab">Назва</span><span class="val">iPhone Duo</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><button class="row" data-copy="Елегантний складний"><span class="lab">Опис</span><span class="val">Елегантний складний</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><button class="row" data-copy="від 99 990"><span class="lab">Ціна</span><span class="val">від 99 990</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><button class="row row--url" data-copy="#order:iPhone Duo=99990"><span class="lab">Посилання</span><span class="val">#order:iPhone Duo=99990</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><div class="thumb"><img src="https://static.tildacdn.net/tila3838-6434-4462-b534-346434633765/_iPhone___.png" alt="" loading="lazy"></div><button class="row row--url" data-copy="https://static.tildacdn.net/tila3838-6434-4462-b534-346434633765/_iPhone___.png"><span class="lab">Картинка</span><span class="val">https://static.tildacdn.net/tila3838-6434-4462-b534-346434633765/_iPhone___.png</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button></div><div class="sub"><div class="subt">Картка 2</div><button class="row" data-copy="iPhone 18 Pro"><span class="lab">Назва</span><span class="val">iPhone 18 Pro</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><button class="row" data-copy="Новий рівень потужності"><span class="lab">Опис</span><span class="val">Новий рівень потужності</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><button class="row" data-copy="від 79 990"><span class="lab">Ціна</span><span class="val">від 79 990</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><button class="row row--url" data-copy="#order:iPhone 18 Pro=79990"><span class="lab">Посилання</span><span class="val">#order:iPhone 18 Pro=79990</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><div class="thumb"><img src="https://static.tildacdn.net/tila3237-3962-4163-b831-656533346362/____.png" alt="" loading="lazy"></div><button class="row row--url" data-copy="https://static.tildacdn.net/tila3237-3962-4163-b831-656533346362/____.png"><span class="lab">Картинка</span><span class="val">https://static.tildacdn.net/tila3237-3962-4163-b831-656533346362/____.png</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button></div><div class="sub"><div class="subt">Картка 3</div><button class="row" data-copy="iPhone Air"><span class="lab">Назва</span><span class="val">iPhone Air</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><button class="row" data-copy="Вражаюче легкий"><span class="lab">Опис</span><span class="val">Вражаюче легкий</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><button class="row" data-copy="від 39990"><span class="lab">Ціна</span><span class="val">від 39990</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><button class="row row--url" data-copy="#order:iPhone Air=39990"><span class="lab">Посилання</span><span class="val">#order:iPhone Air=39990</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><div class="thumb"><img src="https://static.tildacdn.com/tild6133-3063-4563-b638-323366356562/2png.webp" alt="" loading="lazy"></div><button class="row row--url" data-copy="https://static.tildacdn.com/tild6133-3063-4563-b638-323366356562/2png.webp"><span class="lab">Картинка</span><span class="val">https://static.tildacdn.com/tild6133-3063-4563-b638-323366356562/2png.webp</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button></div><div class="sub"><div class="subt">Картка 4</div><button class="row" data-copy="Останній шанс"><span class="lab">Назва</span><span class="val">Останній шанс</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><button class="row" data-copy="iPhone 17 став ще доступнішим"><span class="lab">Опис</span><span class="val">iPhone 17 став ще доступнішим</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><button class="row" data-copy="від 35990"><span class="lab">Ціна</span><span class="val">від 35990</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><button class="row row--url" data-copy="#order:iPhone 17=35990"><span class="lab">Посилання</span><span class="val">#order:iPhone 17=35990</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><div class="thumb"><img src="https://static.tildacdn.com/tild3636-3962-4534-b535-613039666632/3png.webp" alt="" loading="lazy"></div><button class="row row--url" data-copy="https://static.tildacdn.com/tild3636-3962-4534-b535-613039666632/3png.webp"><span class="lab">Картинка</span><span class="val">https://static.tildacdn.com/tild3636-3962-4534-b535-613039666632/3png.webp</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button></div></div></section><section class="card" id="b4"><header class="ch"><span class="num">4</span><div class="codes"><button class="chip" data-copy="TL01" title="Скопіювати код блоку">TL01</button><button class="chip" data-copy="TE605" title="Скопіювати код блоку">TE605</button></div></header><div class="list"><button class="row" data-copy="Наші переваги"><span class="lab">Заголовок</span><span class="val">Наші переваги</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button></div><div class="grid"><div class="sub"><div class="subt">Картка 1</div><button class="row" data-copy="Оригінальна продукція"><span class="lab">Текст</span><span class="val">Оригінальна продукція</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><div class="thumb"><img src="https://static.tildacdn.com/tild3538-3230-4539-a166-653030393365/Rectangle_2085654493.jpg" alt="" loading="lazy"></div><button class="row row--url" data-copy="https://static.tildacdn.com/tild3538-3230-4539-a166-653030393365/Rectangle_2085654493.jpg"><span class="lab">Картинка</span><span class="val">https://static.tildacdn.com/tild3538-3230-4539-a166-653030393365/Rectangle_2085654493.jpg</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button></div><div class="sub"><div class="subt">Картка 2</div><button class="row" data-copy="Доступні ціни"><span class="lab">Текст</span><span class="val">Доступні ціни</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><div class="thumb"><img src="https://static.tildacdn.com/tild6331-3963-4135-b536-633461663639/Rectangle_2085654494.jpg" alt="" loading="lazy"></div><button class="row row--url" data-copy="https://static.tildacdn.com/tild6331-3963-4135-b536-633461663639/Rectangle_2085654494.jpg"><span class="lab">Картинка</span><span class="val">https://static.tildacdn.com/tild6331-3963-4135-b536-633461663639/Rectangle_2085654494.jpg</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button></div><div class="sub"><div class="subt">Картка 3</div><button class="row" data-copy="Гнучкі умови покупки"><span class="lab">Текст</span><span class="val">Гнучкі умови покупки</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><div class="thumb"><img src="https://static.tildacdn.com/tild6262-6465-4438-b735-636632373936/Rectangle_2085654495.jpg" alt="" loading="lazy"></div><button class="row row--url" data-copy="https://static.tildacdn.com/tild6262-6465-4438-b735-636632373936/Rectangle_2085654495.jpg"><span class="lab">Картинка</span><span class="val">https://static.tildacdn.com/tild6262-6465-4438-b735-636632373936/Rectangle_2085654495.jpg</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button></div><div class="sub"><div class="subt">Картка 4</div><button class="row" data-copy="Більше 10.000 задоволених клієнтів"><span class="lab">Текст</span><span class="val">Більше 10.000 задоволених клієнтів</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><div class="thumb"><img src="https://static.tildacdn.com/tild3366-3335-4035-a233-303034623333/Rectangle_2085654334.jpg" alt="" loading="lazy"></div><button class="row row--url" data-copy="https://static.tildacdn.com/tild3366-3335-4035-a233-303034623333/Rectangle_2085654334.jpg"><span class="lab">Картинка</span><span class="val">https://static.tildacdn.com/tild3366-3335-4035-a233-303034623333/Rectangle_2085654334.jpg</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button></div></div></section><section class="card" id="b5"><header class="ch"><span class="num">5</span><div class="codes"><button class="chip" data-copy="TE110" title="Скопіювати код блоку">TE110</button></div></header><div class="grid"><div class="sub"><div class="subt">Картка 1</div><button class="row" data-copy="Trade-In"><span class="lab">Заголовок</span><span class="val">Trade-In</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><button class="row" data-copy="Отримайте знижку при здачі старого пристрою в Trade-In"><span class="lab">Опис</span><span class="val">Отримайте знижку при здачі старого пристрою в Trade-In</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><div class="thumb"><img src="https://static.tildacdn.com/tild6364-6362-4266-a134-393463646562/5NWj0k5f1gTM9u3u255k.jpg" alt="" loading="lazy"></div><button class="row row--url" data-copy="https://static.tildacdn.com/tild6364-6362-4266-a134-393463646562/5NWj0k5f1gTM9u3u255k.jpg"><span class="lab">Картинка</span><span class="val">https://static.tildacdn.com/tild6364-6362-4266-a134-393463646562/5NWj0k5f1gTM9u3u255k.jpg</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button></div><div class="sub"><div class="subt">Картка 2</div><button class="row" data-copy="Розстрочка"><span class="lab">Заголовок</span><span class="val">Розстрочка</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><button class="row" data-copy="Купуйте техніку в кредит або розстрочку без першого внеску"><span class="lab">Опис</span><span class="val">Купуйте техніку в кредит або розстрочку без першого внеску</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button><div class="thumb"><img src="https://static.tildacdn.com/tild6333-6336-4039-b364-613931303365/Kleuren-iPhone-17-Pr.png" alt="" loading="lazy"></div><button class="row row--url" data-copy="https://static.tildacdn.com/tild6333-6336-4039-b364-613931303365/Kleuren-iPhone-17-Pr.png"><span class="lab">Картинка</span><span class="val">https://static.tildacdn.com/tild6333-6336-4039-b364-613931303365/Kleuren-iPhone-17-Pr.png</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button></div></div></section><section class="card" id="b6"><header class="ch"><span class="num">6</span><div class="codes"><button class="chip" data-copy="T123" title="Скопіювати код блоку">T123</button></div></header><p class="note">Вставити код цілком у блок T123 (HTML-код).</p><div class="code"><div class="cbar"><span class="meta">HTML-код · 483 рядків · 17 КБ</span><div class="cbtns"><button class="btn ghost" data-toggle="src2">Показати</button><button class="btn primary" data-copy-from="src2"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg>Копіювати код</button></div></div><textarea id="src2" class="src" wrap="off" readonly spellcheck="false" hidden>&lt;!-- Tilda: блок T123 (HTML-код) «Пролёт сквозь текст». Вставить целиком.
+     Своё видео внутрь букв: data-video="https://.../video.mp4" (и по желанию data-poster="https://.../poster.jpg") в теге &lt;section&gt; ниже. --&gt;
+&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&amp;display=swap&amp;subset=cyrillic" rel="stylesheet"&gt;
+
+&lt;style&gt;
+  .ey-wow {
+    --ey-blue: #0082f1;
+    --ey-ink: #1d1d1f;
+    --ey-font: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    position: relative;
+    height: 320vh;
+    /* only visible in sub-pixel gaps at the very end, where the block meets the blue footer */
+    background: var(--ey-blue);
+    font-family: var(--ey-font);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .ey-wow, .ey-wow *, .ey-wow *::before, .ey-wow *::after { box-sizing: border-box; }
+
+  .ey-wow .ey-stage {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100lvh;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  /* ---------- What shows through the letters ---------- */
+
+  .ey-wow .ey-media {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background: var(--ey-blue);
+    transform-origin: 50% 50%;
+    will-change: transform;
+  }
+
+  .ey-wow .ey-blob {
+    position: absolute;
+    width: 80vmax;
+    height: 80vmax;
+    border-radius: 50%;
+    will-change: transform;
+    animation: eyFloatA 16s ease-in-out infinite alternate;
+  }
+  .ey-wow .ey-blob--1 { top: -35vmax; left: -25vmax; background: radial-gradient(circle, rgba(120, 200, 255, .95) 0, rgba(120, 200, 255, 0) 62%); }
+  .ey-wow .ey-blob--2 { bottom: -40vmax; right: -25vmax; background: radial-gradient(circle, rgba(110, 90, 255, .9) 0, rgba(110, 90, 255, 0) 62%); animation-name: eyFloatB; animation-duration: 19s; }
+  .ey-wow .ey-blob--3 { top: 5vmax; left: 25vmax; width: 55vmax; height: 55vmax; background: radial-gradient(circle, rgba(0, 220, 255, .75) 0, rgba(0, 220, 255, 0) 62%); animation-duration: 13s; animation-delay: -6s; }
+  .ey-wow .ey-blob--4 { bottom: -45vmax; left: -30vmax; background: radial-gradient(circle, rgba(0, 40, 150, .85) 0, rgba(0, 40, 150, 0) 62%); animation-name: eyFloatB; animation-duration: 22s; animation-delay: -9s; }
+  .ey-wow .ey-blob--5 { top: -10vmax; right: -5vmax; width: 45vmax; height: 45vmax; background: radial-gradient(circle, rgba(235, 245, 255, .7) 0, rgba(235, 245, 255, 0) 62%); animation-duration: 17s; animation-delay: -3s; }
+
+  @keyframes eyFloatA {
+    0%   { transform: translate3d(0, 0, 0) scale(1); }
+    50%  { transform: translate3d(14vmax, 8vmax, 0) scale(1.15); }
+    100% { transform: translate3d(-6vmax, 16vmax, 0) scale(.92); }
+  }
+  @keyframes eyFloatB {
+    0%   { transform: translate3d(0, 0, 0) scale(1); }
+    50%  { transform: translate3d(-16vmax, -6vmax, 0) scale(1.1); }
+    100% { transform: translate3d(8vmax, -14vmax, 0) scale(.95); }
+  }
+
+  .ey-wow.is-offscreen .ey-blob { animation-play-state: paused; }
+
+  .ey-wow .ey-media video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity .6s ease;
+  }
+  .ey-wow .ey-media video.is-ready { opacity: 1; }
+
+  .ey-wow .ey-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 18, 60, .10) 0%, rgba(0, 18, 60, .38) 100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* white sheet with the letters cut out (drawn by JS) */
+  .ey-wow .ey-mask {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+  }
+
+  .ey-wow .ey-caption {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: 64%;
+    margin: 0;
+    text-align: center;
+    font-size: clamp(16px, 1.6vw, 22px);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: #6e6e73;
+    pointer-events: none;
+  }
+
+  .ey-wow .ey-hint {
+    display: block;
+    width: 22px;
+    height: 34px;
+    margin: 22px auto 0;
+    border: 2px solid #c7c7cc;
+    border-radius: 12px;
+    position: relative;
+  }
+  .ey-wow .ey-hint::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 7px;
+    width: 4px;
+    height: 7px;
+    margin-left: -2px;
+    border-radius: 2px;
+    background: #c7c7cc;
+    animation: eyHint 1.6s ease-in-out infinite;
+  }
+  @keyframes eyHint {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    60% { transform: translateY(9px); opacity: 0; }
+  }
+
+  /* ---------- Final screen ---------- */
+
+  .ey-wow .ey-final {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .ey-wow .ey-final h2 {
+    margin: 0;
+    padding: 0;
+    font-family: var(--ey-font);
+    font-size: clamp(36px, 7vw, 104px);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+    color: #fff;
+    text-wrap: balance;
+  }
+
+  .ey-wow .ey-final p {
+    max-width: 640px;
+    margin: clamp(16px, 2.4vh, 26px) 0 0;
+    padding: 0;
+    font-size: clamp(17px, 1.6vw, 22px);
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, .86);
+    text-wrap: balance;
+  }
+
+  .ey-wow .ey-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: clamp(26px, 4vh, 44px);
+    height: 62px;
+    padding: 0 44px;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--ey-blue);
+    font-family: var(--ey-font);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    box-shadow: 0 20px 44px -16px rgba(0, 20, 70, .55);
+    transition: transform .25s cubic-bezier(.22, 1, .36, 1), box-shadow .25s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .ey-wow .ey-cta svg { width: 20px; height: 20px; transition: transform .3s cubic-bezier(.22, 1, .36, 1); }
+  .ey-wow .ey-cta:hover { color: var(--ey-blue); box-shadow: 0 24px 50px -16px rgba(0, 20, 70, .65); }
+  .ey-wow .ey-cta:hover svg { transform: translateX(4px); }
+  .ey-wow .ey-cta:active { transform: scale(.97); }
+  .ey-wow .ey-cta:focus-visible { outline: 3px solid rgba(255, 255, 255, .6); outline-offset: 4px; }
+
+  /* melts into the blue footer below */
+  .ey-wow .ey-tail {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 34%;
+    background: linear-gradient(180deg, rgba(0, 130, 241, 0) 0%, var(--ey-blue) 78%, var(--ey-blue) 100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* ---------- JS-driven states ---------- */
+
+  .ey-wow.ey-js .ey-final { opacity: 0; visibility: hidden; }
+  .ey-wow.ey-js .ey-final.is-on { visibility: visible; }
+
+  /* no JS / reduced motion: just the final screen */
+  .ey-wow:not(.ey-js) { height: auto; }
+  .ey-wow:not(.ey-js) .ey-mask,
+  .ey-wow:not(.ey-js) .ey-caption { display: none; }
+
+  @media (max-width: 760px) {
+    .ey-wow { height: 270vh; }
+    .ey-wow .ey-caption { font-size: 16px; }
+    .ey-wow .ey-final p { font-size: 17px; }
+    .ey-wow .ey-cta { width: min(100%, 340px); height: 58px; font-size: 17px; }
+  }
+&lt;/style&gt;
+
+&lt;section class="ey-wow" id="eyWow" aria-labelledby="eyFinalTitle" data-video="" data-poster=""&gt;
+  &lt;script&gt;document.getElementById('eyWow').classList.add('ey-js');&lt;/script&gt;
+
+  &lt;div class="ey-stage" id="eyStage"&gt;
+    &lt;div class="ey-media" id="eyMedia" aria-hidden="true"&gt;
+      &lt;span class="ey-blob ey-blob--4"&gt;&lt;/span&gt;
+      &lt;span class="ey-blob ey-blob--1"&gt;&lt;/span&gt;
+      &lt;span class="ey-blob ey-blob--2"&gt;&lt;/span&gt;
+      &lt;span class="ey-blob ey-blob--3"&gt;&lt;/span&gt;
+      &lt;span class="ey-blob ey-blob--5"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="ey-shade" id="eyShade"&gt;&lt;/div&gt;
+
+    &lt;canvas class="ey-mask" id="eyMask" aria-hidden="true"&gt;&lt;/canvas&gt;
+
+    &lt;p class="ey-caption" id="eyCaption"&gt;
+      Оригінальна техніка Apple · з 2015 року
+      &lt;span class="ey-hint" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;/p&gt;
+
+    &lt;div class="ey-final" id="eyFinal"&gt;
+      &lt;h2 id="eyFinalTitle"&gt;Обирайте своє Яблуко.&lt;/h2&gt;
+      &lt;p&gt;Оригінальні iPhone з офіційною гарантією, розстрочкою та доставкою по Україні за 1 день.&lt;/p&gt;
+      &lt;a class="ey-cta" href="#catalog"&gt;
+        До каталогу
+        &lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;path d="M4 12h15m-6-6.5L19.5 12 13 18.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;div class="ey-tail" id="eyTail"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;script&gt;
+  (function () {
+    var root = document.getElementById('eyWow');
+    var stage = document.getElementById('eyStage');
+    var media = document.getElementById('eyMedia');
+    var shade = document.getElementById('eyShade');
+    var canvas = document.getElementById('eyMask');
+    var caption = document.getElementById('eyCaption');
+    var finalEl = document.getElementById('eyFinal');
+    var tail = document.getElementById('eyTail');
+    if (!root || !canvas || !canvas.getContext) return;
+
+    var LINES_WIDE = ['Ей, Яблуко!'];
+    var LINES_TALL = ['Ей,', 'Яблуко!'];
+    var FONT_WEIGHT = 700;
+    var FONT_FAMILY = '"SF Pro Display", -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
+    var MAX_SCALE = 42;
+
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) {
+      root.classList.remove('ey-js');
+      return;
+    }
+
+    var ctx = canvas.getContext('2d');
+    var L = null;            // current layout
+    var lastP = -1;
+    var ticking = false;
+
+    function clamp(v, a, b) { return v &lt; a ? a : v &gt; b ? b : v; }
+    function smooth(t) { t = clamp(t, 0, 1); return t * t * (3 - 2 * t); }
+    function lerp(a, b, t) { return a + (b - a) * t; }
+
+    function setFont(c, size) {
+      c.font = FONT_WEIGHT + ' ' + size + 'px ' + FONT_FAMILY;
+      if ('letterSpacing' in c) c.letterSpacing = (-0.04 * size).toFixed(2) + 'px';
+      c.textAlign = 'center';
+      c.textBaseline = 'middle';
+    }
+
+    function drawLines(c, lines, x, ys) {
+      for (var i = 0; i &lt; lines.length; i++) c.fillText(lines[i], x, ys[i]);
+    }
+
+    // a point well inside a letter stroke, close to the text center: we zoom into it
+    function findOrigin(lines, size, ys, W, H) {
+      var k = 0.25;
+      var w = Math.max(1, Math.round(W * k)), h = Math.max(1, Math.round(H * k));
+      var off = document.createElement('canvas');
+      off.width = w; off.height = h;
+      var o = off.getContext('2d');
+      o.scale(k, k);
+      setFont(o, size);
+      o.fillStyle = '#000';
+      drawLines(o, lines, W / 2, ys);
+
+      var data = o.getImageData(0, 0, w, h).data;
+      var r = Math.max(2, Math.round(size * 0.035 * k));
+      var cx = w / 2, cy = (ys[0] + ys[ys.length - 1]) / 2 * k;
+      var best = null, bestD = Infinity;
+      function filled(x, y) { return x &gt;= 0 &amp;&amp; y &gt;= 0 &amp;&amp; x &lt; w &amp;&amp; y &lt; h &amp;&amp; data[(y * w + x) * 4 + 3] &gt; 200; }
+
+      for (var y = r; y &lt; h - r; y++) {
+        for (var x = r; x &lt; w - r; x++) {
+          if (!filled(x, y)) continue;
+          var d = (x - cx) * (x - cx) + (y - cy) * (y - cy) * 1.6;
+          if (d &gt;= bestD) continue;
+          if (filled(x - r, y) &amp;&amp; filled(x + r, y) &amp;&amp; filled(x, y - r) &amp;&amp; filled(x, y + r) &amp;&amp;
+              filled(x - r, y - r) &amp;&amp; filled(x + r, y + r) &amp;&amp; filled(x - r, y + r) &amp;&amp; filled(x + r, y - r)) {
+            best = { x: x / k, y: y / k }; bestD = d;
+          }
+        }
+      }
+      return best || { x: W / 2, y: cy / k };
+    }
+
+    function layout() {
+      var W = stage.clientWidth, H = stage.clientHeight;
+      if (!W || !H) return;
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.round(W * dpr);
+      canvas.height = Math.round(H * dpr);
+
+      var lines = W / H &lt; 0.9 ? LINES_TALL : LINES_WIDE;
+      setFont(ctx, 100);
+      var widest = 0;
+      for (var i = 0; i &lt; lines.length; i++) widest = Math.max(widest, ctx.measureText(lines[i]).width);
+      var lh = 0.9;
+      var size = Math.min((W * 0.88) / widest * 100, (H * 0.46) / (lines.length * lh));
+
+      var cy = H * (lines.length &gt; 1 ? 0.42 : 0.44);
+      var ys = [];
+      for (var j = 0; j &lt; lines.length; j++) ys.push(cy + (j - (lines.length - 1) / 2) * size * lh);
+
+      caption.style.top = Math.round(ys[ys.length - 1] + size * 0.62) + 'px';
+
+      L = { W: W, H: H, dpr: dpr, lines: lines, size: size, ys: ys, origin: findOrigin(lines, size, ys, W, H) };
+      lastP = -1;
+      render();
+    }
+
+    function progress() {
+      var rect = root.getBoundingClientRect();
+      var total = root.offsetHeight - stage.offsetHeight;
+      return total &gt; 0 ? clamp(-rect.top / total, 0, 1) : 0;
+    }
+
+    function render() {
+      ticking = false;
+      if (!L) return;
+      var p = progress();
+      if (Math.abs(p - lastP) &lt; 0.0004) return;
+      lastP = p;
+
+      // 0 – .10 hold · .10 – .72 fly through the letters · .74 – .90 final screen
+      var t = clamp((p - 0.10) / 0.62, 0, 1);
+      var e = smooth(t);
+      var s = Math.pow(MAX_SCALE, e);
+      var ox = L.origin.x, oy = L.origin.y;
+      var px = lerp(ox, L.W / 2, e), py = lerp(oy, L.H / 2, e);
+      var sheet = 1 - smooth((t - 0.58) / 0.34);
+
+      canvas.style.opacity = sheet.toFixed(3);
+      if (sheet &gt; 0) {
+        ctx.setTransform(L.dpr, 0, 0, L.dpr, 0, 0);
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.clearRect(0, 0, L.W, L.H);
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(0, 0, L.W, L.H);
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.translate(px, py);
+        ctx.scale(s, s);
+        ctx.translate(-ox, -oy);
+        setFont(ctx, L.size);
+        ctx.fillStyle = '#000';
+        drawLines(ctx, L.lines, L.W / 2, L.ys);
+        ctx.globalCompositeOperation = 'source-over';
+      }
+
+      caption.style.opacity = (1 - smooth(t / 0.12)).toFixed(3);
+      media.style.transform = 'scale(' + (1.3 - 0.3 * e).toFixed(4) + ')';
+
+      var c = smooth((p - 0.74) / 0.16);
+      finalEl.style.opacity = c.toFixed(3);
+      finalEl.style.transform = 'translate3d(0,' + ((1 - c) * 36).toFixed(1) + 'px,0)';
+      finalEl.classList.toggle('is-on', c &gt; 0.02);
+      shade.style.opacity = c.toFixed(3);
+      tail.style.opacity = smooth((p - 0.86) / 0.14).toFixed(3);
+    }
+
+    function requestRender() {
+      if (!ticking) { ticking = true; requestAnimationFrame(render); }
+    }
+
+    // position: sticky breaks inside ancestors with overflow hidden/auto (Tilda wrappers)
+    function freeSticky() {
+      var clip = window.CSS &amp;&amp; CSS.supports &amp;&amp; CSS.supports('overflow', 'clip');
+      for (var n = root.parentElement; n &amp;&amp; n !== document.body &amp;&amp; n !== document.documentElement; n = n.parentElement) {
+        var cs = getComputedStyle(n);
+        if (/(hidden|auto|scroll)/.test(cs.overflowY) || /(hidden|auto|scroll)/.test(cs.overflowX)) {
+          n.style.overflowX = clip ? 'clip' : 'visible';
+          n.style.overflowY = 'visible';
+        }
+      }
+    }
+
+    // optional own video inside the letters
+    function setupVideo() {
+      var src = root.getAttribute('data-video');
+      if (!src) return null;
+      var v = document.createElement('video');
+      v.muted = true;
+      v.loop = true;
+      v.playsInline = true;
+      v.setAttribute('playsinline', '');
+      v.setAttribute('muted', '');
+      v.preload = 'metadata';
+      var poster = root.getAttribute('data-poster');
+      if (poster) v.poster = poster;
+      v.src = src;
+      v.addEventListener('playing', function () { v.classList.add('is-ready'); });
+      media.appendChild(v);
+      return v;
+    }
+
+    freeSticky();
+    var video = setupVideo();
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        var on = entries[0].isIntersecting;
+        root.classList.toggle('is-offscreen', !on);
+        if (video) {
+          if (on) { var pr = video.play(); if (pr &amp;&amp; pr.catch) pr.catch(function () {}); }
+          else video.pause();
+        }
+      }, { rootMargin: '200px 0px' }).observe(root);
+    }
+
+    var lastW = 0, lastH = 0;
+    function onResize() {
+      var W = stage.clientWidth, H = stage.clientHeight;
+      if (W === lastW &amp;&amp; Math.abs(H - lastH) &lt; 2) { requestRender(); return; }
+      lastW = W; lastH = H;
+      layout();
+    }
+
+    window.addEventListener('scroll', requestRender, { passive: true });
+    window.addEventListener('resize', onResize);
+    window.addEventListener('load', layout);
+    layout();
+    // redraw once the real font is ready, otherwise letters use a fallback face
+    if (document.fonts &amp;&amp; document.fonts.ready) document.fonts.ready.then(layout);
+  })();
+&lt;/script&gt;
+</textarea></div></section><section class="card" id="b7"><header class="ch"><span class="num">7</span><div class="codes"><button class="chip" data-copy="FT303" title="Скопіювати код блоку">FT303</button></div></header><div class="list logo"><div class="thumb dark"><img src="https://static.tildacdn.com/tild6338-3664-4433-b562-353933666365/logo_white.svg" alt=""></div><button class="row row--url" data-copy="https://static.tildacdn.com/tild6338-3664-4433-b562-353933666365/logo_white.svg"><span class="lab">Логотип</span><span class="val">https://static.tildacdn.com/tild6338-3664-4433-b562-353933666365/logo_white.svg</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button></div></section><section class="card" id="menu"><header class="ch"><span class="num">Меню</span><div class="codes"><button class="chip" data-copy="ME100C" title="Скопіювати код блоку">ME100C</button></div></header><div class="list logo"><div class="thumb dark"><img src="https://static.tildacdn.com/tild6338-3664-4433-b562-353933666365/logo_white.svg" alt=""></div><button class="row row--url" data-copy="https://static.tildacdn.com/tild6338-3664-4433-b562-353933666365/logo_white.svg"><span class="lab">Логотип</span><span class="val">https://static.tildacdn.com/tild6338-3664-4433-b562-353933666365/logo_white.svg</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg></span></button></div></section>
+</main>
+<footer class="foot wrap">
+  <a href="https://t.me/pivovar_denis" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.4 4.2 2.9 11.3c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.8.8s.6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.3-1.5zM8.6 14l9.2-5.8c.4-.3.8-.1.5.2l-7.6 6.9-.3 3.3L8.6 14z"/></svg>Є питання?</a>
+</footer>
+<div class="toast" id="toast">Скопійовано</div>
+<script>
+(function(){
+  var toast=document.getElementById('toast'),tt;
+  function show(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show')},1400)}
+  function fallback(text){var t=document.createElement('textarea');t.value=text;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(t)}
+  function copy(text){if(navigator.clipboard&&window.isSecureContext){return navigator.clipboard.writeText(text).catch(function(){fallback(text)})}fallback(text);return Promise.resolve()}
+  function flash(el){el.classList.add('done');setTimeout(function(){el.classList.remove('done')},1200)}
+
+  document.addEventListener('click',function(e){
+    var el=e.target.closest('[data-copy],[data-copy-from],[data-toggle]');
+    if(!el)return;
+    if(el.hasAttribute('data-toggle')){
+      var ta=document.getElementById(el.getAttribute('data-toggle'));
+      ta.hidden=!ta.hidden;el.textContent=ta.hidden?'Показати':'Сховати';return;
+    }
+    var text=el.hasAttribute('data-copy-from')?document.getElementById(el.getAttribute('data-copy-from')).value:el.getAttribute('data-copy');
+    copy(text).then(function(){flash(el);show(el.hasAttribute('data-copy-from')?'Код скопійовано':'Скопійовано')});
+  });
+
+  var links=[].slice.call(document.querySelectorAll('nav a'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});
+    links.forEach(function(a){var s=document.querySelector(a.getAttribute('href'));if(s)io.observe(s)});
+  }
+})();
+</script>
+</body>
+</html>
